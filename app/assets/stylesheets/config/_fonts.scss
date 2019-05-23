@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,600");
 
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+body, h1, h2, h3, h4, h5, h6, p, a {
+  font-family: "Open Sans", "Helvetica", "sans-serif";
+}

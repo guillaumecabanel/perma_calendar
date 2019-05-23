@@ -1,0 +1,6 @@
+= content_for :title, advices_period
+
+.flexbox.wrap
+  - @advices.each do |advice|
+    .card
+      = advice.content

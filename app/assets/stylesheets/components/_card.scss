@@ -1,0 +1,20 @@
+.card {
+  margin: 16px;
+  padding: 16px;
+  width: 256px;
+  background-color: #ffffff;
+  flex: 0 0 256px;
+  border-top: 4px solid $nephritis;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+  box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+  
+  .title {
+    margin: -16px;
+    margin-bottom: 8px;
+    padding: 16px;
+    color: $wet-asphalt;
+    font-weight: 700;
+    text-align: center;
+  }
+}

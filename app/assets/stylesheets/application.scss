@@ -1,5 +1,6 @@
-@import "config/fonts";
-@import "config/colors";
-
-@import "layouts/index";
-@import "components/index";
+@import 'vendors/index';
+@import 'config/fonts';
+@import 'config/colors';
+@import 'layouts/index';
+@import 'utilities/index';
+@import 'components/index';
