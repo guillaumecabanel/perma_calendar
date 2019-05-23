@@ -1,4 +1,7 @@
-= content_for :title, advices_period
+#top-bar
+  = link_to 'Quinzaine précédente', advices_path({ garden: params[:garden] }.merge(date: (params[:from] - 15.days).strftime( '%d-%m-%Y')))
+  .title = advices_period
+  = link_to 'Quinzaine suivante', advices_path({ garden: params[:garden] }.merge(date: (params[:to] + 15.days).strftime( '%d-%m-%Y')))
 
 .flexbox.wrap
   - @advices.each do |advice|

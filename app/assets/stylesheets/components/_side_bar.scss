@@ -5,9 +5,9 @@
   width: 288px;
   height: 100vh;
   flex-shrink: 0;
-  padding-top: 32px;
 
   .title {
+    margin-top: 32px;
     font-size: 1.5em;
     font-weight: 600;
     padding: 16px;
@@ -19,12 +19,12 @@
     display: block;
     padding: 16px;
     padding-left: 32px;
-    color: #000000;
+    color: $primary;
     font-size: 1.2em;
     
     &.active {
       background-color: darken($clouds, 10%);
-      border-right: 4px solid $midnight-blue;
+      border-right: 4px solid $primary;
     }
 
     &:hover {

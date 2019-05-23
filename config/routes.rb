@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'advices/index'
+  root to: 'advices#index'
   resources :advices, only: [:index]
 end

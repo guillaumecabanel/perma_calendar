@@ -1,6 +1,8 @@
 class AdvicesController < ApplicationController
   def index
-    @advices = Advice.where("from_date <= ? AND to_date >= ?", DateTime.current.beginning_of_day, DateTime.current.end_of_day)
+    @date = params[:date].present? ? DateTime.parse(params[:date]) : DateTime.current
+
+    @advices = Advice.where("from_date <= ? AND to_date >= ?", @date.beginning_of_day, @date.end_of_day)
 
     if %w[vegetable_garden orchard ornamental_garden].include? params[:garden]
       @advices = @advices.where(garden_category: params[:garden])

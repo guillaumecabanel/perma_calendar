@@ -1,9 +1,17 @@
 #top-bar {
-  background-color: $clouds;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   position: sticky;
   top:0;
-  width: 100%;
   padding: 8px;
-  font-size: 24px;
+  
+  color: $primary;
+  background-color: #ffffff;
+  border-bottom: 2px solid $clouds;
+
+  .title {
+    font-size: 24px;
+    margin: 0 32px;
+  }
 }
