@@ -1,0 +1,10 @@
+nav
+  = link_to "🌿 Au potager",
+    advices_path({ date: params[:date] }.merge(garden: 'vegetable_garden')),
+    class: "nav-button #{'active' if params[:garden] == 'vegetable_garden' || params[:garden].nil?}"
+  = link_to "🌳 Au verger",
+    advices_path({ date: params[:date] }.merge(garden: 'orchard')),
+    class: "nav-button #{'active' if params[:garden] == 'orchard'}"
+  = link_to "🌷 Au jardin",
+    advices_path({ date: params[:date] }.merge(garden: 'ornamental_garden')),
+    class: "nav-button #{'active' if params[:garden] == 'ornamental_garden'}"

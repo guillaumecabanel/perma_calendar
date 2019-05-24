@@ -15,3 +15,43 @@
     margin: 0 32px;
   }
 }
+
+#navbar-mobile {
+  padding-top: 8px;
+  background-color: $clouds;
+
+  .title {
+    margin-top: 16px;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+  }
+
+  nav a.nav-button {
+    flex: 1 0 auto;
+    text-decoration: none;
+    text-align: center;
+    padding: 8px;
+    color: $primary;
+    font-size: 0.9em;
+    border: 1px solid darken($clouds, 5%);
+    border-left: none;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.active {
+      background-color: darken($clouds, 10%);
+      border-bottom: 4px solid $primary;
+    }
+
+    &:hover {
+      background-color: darken($clouds, 5%);
+    }
+  }
+}

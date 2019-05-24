@@ -12,8 +12,9 @@ html
     /= stylesheet_pack_tag 'application', media: 'all'
   body
     .flexbox
-      = render 'shared/side_bar'
+      = render 'components/side_bar'
       #main
+        = render 'components/top_bar'
         = yield
     = javascript_include_tag 'application'
     = javascript_pack_tag 'application'

@@ -1,3 +1,31 @@
 #main {
   flex-grow: 1;
 }
+
+/* Mobile first queries */
+.mobile-only {
+  display: '';
+}
+
+.mobile-hide {
+  display: none;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .mobile-hide {
+    display: initial;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
