@@ -2,7 +2,7 @@ class AdvicesController < ApplicationController
   def index
     @date = params[:date].present? ? DateTime.parse(params[:date]) : DateTime.current
 
-    @advices = Advice.where("from_date <= ? AND to_date >= ?", @date.beginning_of_day, @date.end_of_day)
+    @advices = Advice.where(where_dates, @date.day, @date.month, @date.day, @date.month)
 
     if %w[vegetable_garden orchard ornamental_garden].include? params[:garden]
       @advices = @advices.where(garden_category: params[:garden])
@@ -14,5 +14,16 @@ class AdvicesController < ApplicationController
     params[:to] = @advices.first.to_date
     
     @advices = @advices.order(:from_date)
+  end
+
+  private
+
+  def where_dates
+    <<-SQL
+      DATE_PART('day', from_date) <= ?
+      AND DATE_PART('month', from_date) <= ?
+      AND DATE_PART('day', to_date) >= ?
+      AND DATE_PART('month', to_date) >= ?
+    SQL
   end
 end
