@@ -1,14 +1,28 @@
 .card {
+  position: relative;
   margin: 16px;
+  margin-top: 48px;
   padding: 16px;
+  padding-top: 32px;
   width: 256px;
   background-color: #ffffff;
   flex: 0 0 256px;
-  border-top: 4px solid $secondary;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   
+  .icon {
+    position: absolute;
+    top: -48px;
+    background-color: white;
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .title {
     margin: -16px;
     margin-bottom: 8px;
@@ -16,5 +30,42 @@
     color: $wet-asphalt;
     font-weight: 700;
     text-align: center;
+  }
+
+  &.seeding {
+    border-top: 16px solid $sun-flower;
+    .icon {
+      border: 4px solid $sun-flower;
+    }
+  }
+  &.harvest {
+    border-top: 16px solid $orange;
+    .icon {
+      border: 4px solid $orange;
+    }
+  }
+  &.maintenance {
+    border-top: 16px solid $nephritis;
+    .icon {
+      border: 4px solid $nephritis;
+    }
+  }
+  &.watering {
+    border-top: 16px solid $peter-river;
+    .icon {
+      border: 4px solid $peter-river;
+    }
+  }
+  &.compost {
+    border-top: 16px solid $pumpkin;
+    .icon {
+      border: 4px solid $pumpkin;
+    }
+  }
+  &.other {
+    border-top: 16px solid lighten($nephritis, 10%);
+    .icon {
+      border: 4px solid lighten($nephritis, 10%);
+    }
   }
 }

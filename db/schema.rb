@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_23_115430) do
+ActiveRecord::Schema.define(version: 2019_05_26_163117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2019_05_23_115430) do
     t.datetime "to_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "action", default: "other"
     t.index ["from_date", "garden_category"], name: "index_advices_on_from_date_and_garden_category"
   end
 

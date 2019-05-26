@@ -5,5 +5,7 @@
 
 .flexbox.wrap
   - @advices.each do |advice|
-    .card
+    .card class=(advice.action)
+      .icon
+        = advice_action_icon(advice)
       = advice.content
