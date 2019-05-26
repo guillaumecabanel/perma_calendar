@@ -1,8 +1,8 @@
 require 'csv'
 
 ACTIONS = [
-  { pattern: "Semez",      title: "seeding" },
-  { pattern: "Plantez",    title: "seeding" },
+  { pattern: "Semez",      title: "seed" },
+  { pattern: "Plantez",    title: "plant" },
   { pattern: "Binez",      title: "maintenance" },
   { pattern: "Buttez",     title: "maintenance" },
   { pattern: "Couvrez",    title: "maintenance" },
@@ -15,6 +15,7 @@ ACTIONS = [
   { pattern: "Protéger",   title: "maintenance" },
   { pattern: "Protégez",   title: "maintenance" },
   { pattern: "Travaillez", title: "maintenance" },
+  { pattern: "Taillez",    title: "trim" },
   { pattern: "Arrosez",    title: "watering" },
   { pattern: "Récoltez",   title: "harvest" },
   { pattern: "compost",    title: "compost" },
@@ -68,9 +69,13 @@ puts "-" * 200
 puts "Stats:\n"
 puts "Advices: #{advice_count}"
 
-seeding_count = Advice.where(action: 'seeding').count
-seeding_ratio = (seeding_count.fdiv(advice_count) * 100).round(1)
-puts "Seeding:     #{seeding_count} [#{seeding_ratio}%]"
+plant_count = Advice.where(action: 'plant').count
+plant_ratio = (plant_count.fdiv(advice_count) * 100).round(1)
+puts "Plant:       #{plant_count} [#{plant_ratio}%]"
+
+seed_count = Advice.where(action: 'seed').count
+seed_ratio = (seed_count.fdiv(advice_count) * 100).round(1)
+puts "Seed:        #{seed_count} [#{seed_ratio}%]"
 
 harvest_count = Advice.where(action: 'harvest').count
 harvest_ratio = (harvest_count.fdiv(advice_count) * 100).round(1)
@@ -87,6 +92,10 @@ puts "Compost:     #{compost_count} [#{compost_ratio}%]"
 watering_count = Advice.where(action: 'watering').count
 watering_ratio = (watering_count.fdiv(advice_count) * 100).round(1)
 puts "Watering:    #{watering_count} [#{watering_ratio}%]"
+
+trim_count = Advice.where(action: 'trim').count
+trim_ratio = (trim_count.fdiv(advice_count) * 100).round(1)
+puts "Trim:        #{trim_count} [#{trim_ratio}%]"
 
 other_count = Advice.where(action: 'other').count
 other_ratio = (other_count.fdiv(advice_count) * 100).round(1)

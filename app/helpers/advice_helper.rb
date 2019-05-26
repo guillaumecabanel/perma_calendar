@@ -5,11 +5,13 @@ module AdviceHelper
 
   def advice_action_icon(advice)
     action_icons = {
-      seeding:     'seed',
+      seed:        'seed',
+      plant:       'tree-planting',
       maintenance: 'gloves',
       watering:    'irrigation',
       compost:     'compost',
       harvest:     'scythe',
+      trim:        'shears',
       other:       'cabbage'
     }
 
