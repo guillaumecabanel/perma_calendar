@@ -9,7 +9,7 @@
   .flexbox.wrap
     - @advices.each do |advice|
       .card class=(advice.action)
-        .icon
+        .icon data-info=(t "advice.action.#{advice.action}")
           = advice_action_icon(advice)
         small.advice-id
           | #conseil-

@@ -1,0 +1,12 @@
+---
+fr:
+  advice:
+    action:
+      seed: Semer
+      plant: Planter
+      harvest: Récolter
+      maintenance: Maintenir
+      trim: Couper
+      watering: Arroser
+      compost: Composter
+      other: Général

@@ -10,6 +10,7 @@
   border-bottom-right-radius: 2px;
   box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
   flex: 1 0 auto;
+  animation: scale-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 
   .icon {
     position: absolute;
@@ -21,6 +22,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover::after {
+      content: attr(data-info);
+      position: absolute;
+      left: calc(100% + 8px);
+      background-color: $midnight-blue;
+      color: #ffffff;
+      padding: 0 4px;
+      border-radius: 4px;
+      animation: scale-in-tl 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    }
   }
 
   .advice-id {
