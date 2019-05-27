@@ -1,14 +1,16 @@
 = content_for(:title, advices_period)
 
 #top-bar
+  = previous_date_navigation_link
   .title = advices_period
-  = link_to_today_advice
-  = link_to 'Quinzaine précédente', advices_path({ garden: params[:garden] }.merge(date: (params[:from] - 15.days).strftime( '%d-%m-%Y')))
-  = link_to 'Quinzaine suivante', advices_path({ garden: params[:garden] }.merge(date: (params[:to] + 15.days).strftime( '%d-%m-%Y')))
+  = next_date_navigation_link
 
 .flexbox.wrap
   - @advices.each do |advice|
     .card class=(advice.action)
       .icon
         = advice_action_icon(advice)
+      small.advice-id
+        | #conseil-
+        = advice.id
       = advice.content

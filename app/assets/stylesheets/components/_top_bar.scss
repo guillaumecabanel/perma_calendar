@@ -1,7 +1,8 @@
 #top-bar {
   z-index: 1;
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
   align-items: baseline;
   position: sticky;
   top:0;
@@ -14,6 +15,25 @@
   .title {
     font-size: 24px;
     margin: 0 32px;
+    text-align: center;
+    flex: 1 0 auto;
+  }
+
+
+  .empty-nav-link, .date-nav-link {
+      flex: 1 0 auto;
+  }
+
+  @media (min-width: 550px) {
+    .empty-nav-link, .date-nav-link {
+      position: absolute;
+    }
+    .date-nav-link.prev {
+      left: 16px;
+    }
+    .date-nav-link.next {
+      right: 16px;
+    }
   }
 }
 
