@@ -1,6 +1,6 @@
 # Calendrier de permaculture
 
-[Site](https://perma-cal.cleverapps.io/)
+[Application web](https://perma-cal.cleverapps.io/) présentant les conseils trouvés sur http://www.terrevivante.org/594-calendrier-des-travaux-du-jardin.htm.
 
 ## Installation en local
 
