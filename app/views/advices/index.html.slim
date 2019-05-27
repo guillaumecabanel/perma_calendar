@@ -1,16 +1,17 @@
-= content_for(:title, advices_period)
+- if @advices.any?
+  = content_for(:title, advices_period)
 
-#top-bar
-  = previous_date_navigation_link
-  .title = advices_period
-  = next_date_navigation_link
+  #top-bar
+    = previous_date_navigation_link
+    .title = advices_period
+    = next_date_navigation_link
 
-.flexbox.wrap
-  - @advices.each do |advice|
-    .card class=(advice.action)
-      .icon
-        = advice_action_icon(advice)
-      small.advice-id
-        | #conseil-
-        = advice.id
-      = advice.content
+  .flexbox.wrap
+    - @advices.each do |advice|
+      .card class=(advice.action)
+        .icon
+          = advice_action_icon(advice)
+        small.advice-id
+          | #conseil-
+          = advice.id
+        = advice.content

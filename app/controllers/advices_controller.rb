@@ -10,8 +10,10 @@ class AdvicesController < ApplicationController
       @advices = @advices.where(garden_category: 'vegetable_garden')
     end
 
-    params[:from] = @advices.first.from_date
-    params[:to] = @advices.first.to_date
+    if @advices.any?
+      params[:from] = @advices.first.from_date
+      params[:to] = @advices.first.to_date
+    end
     
     @advices = @advices.order(:from_date)
   end
